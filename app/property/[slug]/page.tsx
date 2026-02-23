@@ -10,7 +10,7 @@ import LayoutPlans from "@/components/LayoutPlans";
 
 
 
-function Sections({ listing }) {
+function Sections({ listing }: any) {
   return (
     <div className="bg-[#f6f8f7] py-16">
       <div className="max-w-7xl mx-auto px-6">
