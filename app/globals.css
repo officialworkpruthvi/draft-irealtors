@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.input{
+  @apply w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 text-sm 
+  outline-none transition-all duration-200
+  focus:border-black focus:ring-2 focus:ring-black/10;
+}
+
+.remove-btn{
+  @apply bg-red-50 text-red-600 rounded-lg px-3 py-2 text-sm hover:bg-red-100 transition;
+}
+
+.add-btn{
+  @apply bg-black text-white px-4 py-2 rounded-lg text-sm hover:opacity-90 transition;
+}
+/* super light fade animation */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html, body {
+  overflow-x: clip;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+/* Width of scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #22c55e,
+    #16a34a
+  );
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    #16a34a,
+    #15803d
+  );
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #16a34a transparent;
+}
+/* Hide by default */
+body::-webkit-scrollbar-thumb {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show while scrolling */
+body:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+/* Momentum scroll on iOS */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* WhatsApp Floating Button */
+
+.wa-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  height: 56px;
+  width: 56px;
+  background: #25d366;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.wa-container.expand {
+  width: 190px;
+  justify-content: flex-start;
+  padding-left: 18px;
+}
+
+.wa-icon {
+  color: white;
+  font-size: 26px;
+  min-width: 26px;
+}
+
+.wa-text {
+  color: white;
+  font-weight: 500;
+  margin-left: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  font-family: sans-serif;
+}
+
+.wa-container.expand .wa-text {
+  opacity: 1;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .wa-container {
+    bottom: 18px;
+    right: 18px;
+  }
+}
