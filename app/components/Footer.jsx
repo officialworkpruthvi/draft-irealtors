@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-extrabold text-gray-900">
-              I<span className="text-green-600">Realtors</span>
+              Matru<span className="text-green-600">Bhumi</span>
             </h3>
             <p className="mt-5 text-gray-500 leading-relaxed">
               Real estate simplified. Helping buyers, sellers, and investors
@@ -64,7 +64,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} I Realtors. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Matrubhumi. All rights reserved.</p>
 
           <div className="flex gap-6 mt-4 md:mt-0">
             <span className="hover:text-green-600 cursor-pointer transition">Instagram</span>
